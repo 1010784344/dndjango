@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a href="http://127.0.0.1:8000/myurl/">这是绝对地址</a>
+<br>
+<a href="/myurl/">这是带 '/' 的相对地址</a>
+<br>
+<a href="myurl/">这是不带'/' 的相对地址</a>
+<br>
+<a href={% url "my_url" %}>这是反向解析</a>
+
+</body>
+</html>

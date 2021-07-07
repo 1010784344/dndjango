@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+{% if age < 9 %}
+    <h1>你很年轻！</h1>
+{% else %}
+    <h1>你很成熟！</h1>
+{% endif %}
+
+<br>
+
+{% for foo in lst %}
+    {% if forloop.first %}
+    ************
+    {% endif %}
+
+    <p>{{ forloop.counter }} {{ foo }}</p>
+
+    {% if forloop.last %}
+    ========
+    {% endif %}
+    {% empty %}
+    <p>什么也没有</p>
+{% endfor %}
+
+
+</body>
+</html>
