@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试静态文件</title>
+</head>
+<body>
+<h2>绝对地址</h2>
+<img src="http://127.0.0.1:8000/static/image/nike.png" alt="">
+{#注意，静态 url 要以static 开头 ，static 后面写的是文件具体的存放地址#}
+<br>
+<h2>带 '/' 的相对地址</h2>
+<img src="/static/image/nike.png" alt="">
+<br>
+<h2>static 标签的动态地址</h2>
+{% load static %}
+<img src="{% static 'image/nike.png' %}" alt="">
+</body>
+</html>
