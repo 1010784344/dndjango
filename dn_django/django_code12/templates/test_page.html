@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>分页</title>
+</head>
+<body>
+
+<a href="/make_page_csv?page={{ c_page.number }}">生成csv</a>
+
+{% for foo in c_page %}
+    <p>{{ foo }}</p>
+
+{% endfor %}
+
+{% if c_page.has_previous %}
+    <a href="/test_page?page={{ c_page.previous_page_number }}">上一页</a>
+
+{% else %}
+    上一页
+{% endif %}
+
+{% for foo in paginator.page_range %}
+    {% if foo == c_page.number %}
+        {{ foo }}
+    {% else %}
+        <a href="/test_page?page={{ foo }}">{{ foo }}</a>
+    {% endif %} 
+{% endfor %}
+
+
+{% if c_page.has_next %}
+    <a href="/test_page?page={{ c_page.next_page_number }}">下一页</a>
+
+{% else %}
+    下一页
+{% endif %}
+
+
+
+</body>
+</html>
